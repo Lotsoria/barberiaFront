@@ -1,0 +1,46 @@
+* {
+  font-family: "Cinzel";
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #121212;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.container .contentLogo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 45px;
+  font-weight: 800;
+}
+.container .contentLogo span {
+  color: red;
+}
+.container .contentMenu {
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+.container .contentMenu ul {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  list-style: none;
+}
+.container .contentMenu ul li {
+  margin: 0 10px;
+}
+.container .contentMenu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+.container .contentMenu ul li:hover a {
+  color: red;
+}/*# sourceMappingURL=header.component.css.map */
