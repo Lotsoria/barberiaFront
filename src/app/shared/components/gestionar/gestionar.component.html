@@ -1,1 +1,25 @@
-<p>gestionar works!</p>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody > 
+            <tr *ngFor="let data of listCliente" >
+                <td>{{data.nombres}}</td>
+                <td>{{data.apellidos}}</td>
+                <td>{{data.correo}}</td>
+                <td>{{data.telefono}}</td>
+                <td class="tdBtn">
+                    <button class="editar" (click)="updateClient()">Editar</button>
+                    <button class="eliminar" (click)="deleteUser(data.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

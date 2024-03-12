@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { AgendarComponent } from './components/agendar/agendar.component';
 import { GestionarComponent } from './components/gestionar/gestionar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,9 @@ import { GestionarComponent } from './components/gestionar/gestionar.component';
     GestionarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     FooterComponent,

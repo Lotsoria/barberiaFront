@@ -1,5 +1,9 @@
+* {
+  font-family: "Cinzel";
+}
+
 .container {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -9,9 +13,27 @@
 .container form {
   display: flex;
   flex-direction: column;
+  width: 500px;
+  align-items: center;
   gap: 20px;
 }
-.container form input {
+.container form .title {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+.container form .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.container form .content label {
+  font-size: 20px;
+  font-weight: 800;
+}
+.container form .content input {
   width: 300px;
   height: 40px;
   padding: 0 10px;
@@ -19,8 +41,8 @@
   border-radius: 5px;
   outline: none;
 }
-.container form button {
-  width: 300px;
+.container form .content button {
+  width: 100%;
   height: 40px;
   border: none;
   border-radius: 5px;
@@ -31,7 +53,7 @@
   cursor: pointer;
   outline: none;
 }
-.container form button:hover {
+.container form .content button:hover {
   background-color: white;
   color: red;
 }/*# sourceMappingURL=registrar.component.css.map */
