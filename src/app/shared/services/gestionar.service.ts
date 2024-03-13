@@ -20,13 +20,15 @@ export class GestionarService {
     </soapenv:Envelope>`;
 
     const headers = { 'Content-Type': 'text/xml' };
-    return this.http.post('http://localhost:3000/cliente', soapEnvelope, { headers, responseType: 'text' })
+    return this.http.post('http://localhost:3000/clientes', soapEnvelope, { headers, responseType: 'text' })
       
     ;
   }
 
-  deleteCliente(id: any) {
-    return this.http.delete(`${this.url}delete/${id}`);
+  deleteCliente(soapRequest: string) {
+    const headers = { 'Content-Type': 'text/xml' };
+    return this.http.post('http://localhost:3000/clientes', soapRequest, { headers, responseType: 'text' });
+
   }
 }
 

@@ -15,10 +15,6 @@ export class RegistrarService {
   url: string = environment.clientesApi;
   createClient(soapRequest: string) {
     const headers = { 'Content-Type': 'text/xml' };
-    return this.http.post('http://localhost:3000/cliente', soapRequest, { headers, responseType: 'text' });
+    return this.http.post('http://localhost:3000/clientes', soapRequest, { headers, responseType: 'text' });
   }
-
-  // crearUsuario(form: ClienteInterface) {
-  //   return this.http.post<ClienteInterface>(`${this.url}create`, form);
-  // }
 }

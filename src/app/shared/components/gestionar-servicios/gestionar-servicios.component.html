@@ -1,0 +1,22 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody > 
+            <tr *ngFor="let data of listServicios" >
+                <td>{{data.descripcion}}</td>
+                <td>{{data.precio}}</td>
+                <td>{{data.estado}}</td>            <td class="tdBtn">
+                    <button class="editar" >Editar</button>
+                    <button class="eliminar" >Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
