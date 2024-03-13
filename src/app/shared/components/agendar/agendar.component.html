@@ -1,1 +1,23 @@
-<p>agendar works!</p>
+<div class="container">
+    <h1>Ingrese datos de la cita</h1>
+    <form>
+        <div class="content">
+            <div class="selectClientes">
+                <select class="form-control" name="cliente" id="cliente" formControlName="cliente" (change)="obtenerServicios()">
+                    <option *ngFor="let clientes of listCliente" [value]="clientes.id">{{clientes.nombres}} {{clientes.apellidos}}
+                    </option>
+                </select>
+            </div>
+            <div class="selectServicios">
+                <select class="form-control" name="cliente" id="cliente" formControlName="cliente">
+                    <option *ngFor="let servicios of listServicios" [value]="servicios.id">{{servicios.descripcion}} Q.{{servicios.precio}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="fecha">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" formControlName="fecha">
+        </div>
+    </form>
+</div>
