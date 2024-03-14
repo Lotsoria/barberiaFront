@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="contentTitle">
+        <h1>Servicios</h1>
+    </div>
+    <div class="contentTable">
     <table>
         <thead>
             <tr>
@@ -12,11 +16,13 @@
             <tr *ngFor="let data of listServicios" >
                 <td>{{data.descripcion}}</td>
                 <td>{{data.precio}}</td>
-                <td>{{data.estado}}</td>            <td class="tdBtn">
-                    <button class="editar" >Editar</button>
+                <td>{{data.estado}}</td>            
+                <td class="tdBtn">
+                    <button class="editar" (click)="openModal(data.id)" >Editar</button>
                     <button class="eliminar" >Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
+    </div>
 </div>

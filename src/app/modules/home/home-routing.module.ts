@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'gestionar',
     component: GestionarComponent,
     loadChildren: () => import('../gestionar/gestionar.module').then(m => m.GestionarModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'registrar',
+    pathMatch: 'full'
   }
 ];
 

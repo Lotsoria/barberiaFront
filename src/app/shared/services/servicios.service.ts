@@ -23,4 +23,12 @@ export class ServiciosService {
       responseType: 'text',
     });
   }
+
+  updateServicios(soapRequest: string) {
+    const headers = { 'Content-Type': 'text/xml' };
+    return this.http.post('http://localhost:3000/servicios', soapRequest, {
+      headers,
+      responseType: 'text',
+    });
+  }
 }

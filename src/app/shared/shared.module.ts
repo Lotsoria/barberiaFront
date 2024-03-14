@@ -10,7 +10,10 @@ import { GestionarServiciosComponent } from './components/gestionar-servicios/ge
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { RouterModule } from '@angular/router';
 import { GestionarCitasComponent } from './components/gestionar-citas/gestionar-citas.component';
-
+import { UpdateServiciosModalComponent } from './modals/update-servicios-modal/update-servicios-modal.component';
+import { UpdateClientesModalComponent } from './modals/update-clientes-modal/update-clientes-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 
 @NgModule({
@@ -22,13 +25,18 @@ import { GestionarCitasComponent } from './components/gestionar-citas/gestionar-
     GestionarClientesComponent,
     GestionarServiciosComponent,
     SideBarComponent,
-    GestionarCitasComponent
+    GestionarCitasComponent,
+    UpdateServiciosModalComponent,
+    UpdateClientesModalComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule,
+    AngularMaterialModule
+
   ],
   exports: [
     FooterComponent,
@@ -36,7 +44,7 @@ import { GestionarCitasComponent } from './components/gestionar-citas/gestionar-
     RegistrarComponent,
     AgendarComponent,
     GestionarClientesComponent,
-    GestionarServiciosComponent,
+    // GestionarServiciosComponent,
     SideBarComponent
   ]	
 })
