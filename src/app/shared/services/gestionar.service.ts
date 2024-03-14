@@ -20,8 +20,7 @@ export class GestionarService {
     </soapenv:Envelope>`;
 
     const headers = { 'Content-Type': 'text/xml' };
-    return this.http.post('http://localhost:3000/clientes', soapEnvelope, { headers, responseType: 'text' })
-      
+    return this.http.post('http://localhost:3000/clientes', soapEnvelope, { headers, responseType: 'text' }) 
     ;
   }
 

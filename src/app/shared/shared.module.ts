@@ -14,6 +14,7 @@ import { UpdateServiciosModalComponent } from './modals/update-servicios-modal/u
 import { UpdateClientesModalComponent } from './modals/update-clientes-modal/update-clientes-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
+import { UpdateCitasModalComponent } from './modals/update-citas-modal/update-citas-modal.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
     SideBarComponent,
     GestionarCitasComponent,
     UpdateServiciosModalComponent,
-    UpdateClientesModalComponent
+    UpdateClientesModalComponent,
+    UpdateCitasModalComponent
   ],
   imports: [
     CommonModule,

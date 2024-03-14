@@ -1,33 +1,35 @@
 <div class="container">
-    <div class="contentTitle">
-        <h1>Citas</h1>
-    </div>
-    <div class="contentTable">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Descripcion</th>
-                    <th>Fecha de reservacion</th>
-                    <th>Monto total</th>
-                    <th>Cliente</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            
-            <tbody > 
-                <tr  >
-                    <td>data.nombres</td>
-                    <td>data.apellidos</td>
-                    <td>data.correo</td>
-                    <td>data.telefono</td>
-                    <td>data.telefono</td>
-                    <td class="tdBtn">
-                        <button class="editar" (click)="updateCitas()" >Editar</button>
-                        <button class="eliminar" >Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <div class="contentTitle">
+    <h1>Citas</h1>
+  </div>
+  <div class="contentTable">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha de reservacion</th>
+          <th>Hora de reservacion</th>
+          <th>Cliente</th>
+          <th>Servicio</th>
+          <th>Monto total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let data of listCitas">
+          <td>{{ data.id }}</td>
+          <td>{{ data.fechaReservacion }}</td>
+          <td>{{ data.horaReservacion }}</td>
+          <td>{{ data.cliente }}</td>
+          <td>{{ data.descripcion }}</td>
+          <td>{{ data.precio }}</td>
+          <td class="tdBtn">
+            <button class="editar" (click)="openModal(data.id)">Editar</button>
+            <button class="eliminar">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

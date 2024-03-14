@@ -1,0 +1,22 @@
+* {
+  font-family: "Cinzel";
+}
+
+.example-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hora input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.fecha input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}/*# sourceMappingURL=update-citas-modal.component.css.map */
