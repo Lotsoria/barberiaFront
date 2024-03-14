@@ -18,6 +18,12 @@ const routes: Routes = [
   {
     path: 'citas',
     component: GestionarCitasComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'clientes',
+    pathMatch: 'full'
+  
   }
 ];
 

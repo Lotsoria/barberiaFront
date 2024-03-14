@@ -3,13 +3,18 @@ import { GestionarService } from '../../services/gestionar.service';
 import * as convert from 'xml-js';
 import { ClienteInterface } from 'src/app/core/interface/cliente.interface';
 import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateClientesModalComponent } from '../../modals/update-clientes-modal/update-clientes-modal.component';
 @Component({
   selector: 'app-gestionar-clientes',
   templateUrl: './gestionar-clientes.component.html',
   styleUrls: ['./css/gestionar-clientes.component.css'],
 })
 export class GestionarClientesComponent implements OnInit {
-  constructor(private gestionarService: GestionarService) {}
+  constructor(
+    private gestionarService: GestionarService,
+    private _matDialog: MatDialog
+    ) {}
 
   list: any = [];
   listCliente: ClienteInterface[] = [];
@@ -38,36 +43,46 @@ export class GestionarClientesComponent implements OnInit {
   }
 
   deleteUser(id: any) {
-    console.log("deleteUser", id);  
-    const soapRequest = this.deleteSoapRequest(id);
-    console.log("soapRequest", soapRequest);
-    this.gestionarService.deleteCliente(soapRequest).subscribe({
-      next: (data) => {},
-      error: (error) => {
-        console.log(error);
-      },
-      complete: () => {
-        this.showData();
-        Swal.fire({
-          position: 'top',
-          icon: 'success',
-          title: 'Usuario eliminado con exito',
-          showConfirmButton: false,
-          timer: 2500,
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¡No podrás revertir esto!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, borrarlo',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const soapRequest = this.deleteSoapRequest(id);
+        this.gestionarService.deleteCliente(soapRequest).subscribe({
+          next: (data) => {},
+          error: (error) => {},
+          complete: () => {
+            this.showData();
+            Swal.fire('¡Borrado!', 'Tu dato ha sido borrado.', 'success');
+          },
         });
-      },
+      }
+    });
+
+  }
+
+
+
+  openModal(id: any): void {
+    const dialogRef = this._matDialog.open(UpdateClientesModalComponent, {
+      width: '500px',
+      data: { id: id },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.showData();
+      console.log('result', result);
+
     });
   }
 
-  updateClient() {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  }
+
   deleteSoapRequest(id: any): string {
     // Convierte los datos del formulario a una solicitud SOAP XML
     const soapEnvelope = `

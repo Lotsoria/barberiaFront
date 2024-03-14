@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cinzel";
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -6,50 +13,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 35px;
 }
-.container table {
+.container .contentTitle h1 {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+}
+.container .contentTable {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container .contentTable table {
   width: 80%;
   border-collapse: collapse;
 }
-.container table thead {
+.container .contentTable table thead {
   background-color: #f5f5f5;
 }
-.container table thead tr th {
+.container .contentTable table thead tr th {
   text-align: center;
   padding: 10px;
   border: 5px solid black;
 }
-.container table tbody tr td {
+.container .contentTable table tbody tr td {
   padding: 10px;
   border: 1px solid black;
 }
-.container table tbody tr .tdBtn {
+.container .contentTable table tbody tr .tdBtn {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-.container table tbody tr .tdBtn button {
+.container .contentTable table tbody tr .tdBtn button {
   width: 100px;
   height: 30px;
   border-radius: 10px;
 }
-.container table tbody tr .tdBtn .editar {
+.container .contentTable table tbody tr .tdBtn .editar {
   background-color: #103f91;
   color: white;
   font-size: 18px;
   cursor: pointer;
 }
-.container table tbody tr .tdBtn .editar:hover {
+.container .contentTable table tbody tr .tdBtn .editar:hover {
   background-color: white;
   color: #103f91;
 }
-.container table tbody tr .tdBtn .eliminar {
+.container .contentTable table tbody tr .tdBtn .eliminar {
   background-color: red;
   color: white;
   font-size: 18px;
   cursor: pointer;
 }
-.container table tbody tr .tdBtn .eliminar:hover {
+.container .contentTable table tbody tr .tdBtn .eliminar:hover {
   background-color: white;
   color: red;
 }/*# sourceMappingURL=gestionar-servicios.component.css.map */
