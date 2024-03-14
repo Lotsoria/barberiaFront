@@ -1,25 +1,24 @@
 <div class="container">
-    <form [formGroup]="createNewUser">
-    <label class="title" for="">Regisrar usuario</label>
+  <form [formGroup]="createNewUser">
+    <label class="title" for="">Regisrar cliente</label>
     <div class="content">
-        <label for="">Nombres:</label>
-        <input type="text" placeholder="Nombre" formControlName="nombres">
+      <label for="">Nombres:</label>
+      <input type="text" placeholder="Nombre" formControlName="nombres" />
     </div>
     <div class="content">
-        <label for="">Apellidos:</label>
-        <input type="text" placeholder="Apellido" formControlName="apellidos">
+      <label for="">Apellidos:</label>
+      <input type="text" placeholder="Apellido" formControlName="apellidos" />
     </div>
     <div class="content">
-        <label for="">telefono:</label>
-        <input type="number" placeholder="Correo" formControlName="telefono">
+      <label for="">telefono:</label>
+      <input type="number" placeholder="Correo" formControlName="telefono" />
     </div>
     <div class="content">
-        <label for="">Correo:</label>
-        <input type="email" placeholder="Correo" formControlName="correo">
+      <label for="">Correo:</label>
+      <input type="email" placeholder="Correo" formControlName="correo" />
     </div>
     <div class="content">
-        <button (click)="createClient()">Registrar</button>
+      <button (click)="createClient()">Registrar</button>
     </div>
-</form>
-</div> 
-
+  </form>
+</div>

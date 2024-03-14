@@ -13,7 +13,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule    
   ]
 })
 export class HomeModule { }

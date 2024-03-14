@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Editar Datos</h2>
+<mat-dialog-content class="prueba">
+  <form class="example-form" [formGroup]="updateDataCita">
+    <mat-form-field class="fuse-mat-dense w-full">
+      <mat-label>Clientes:</mat-label>
+      <mat-select formControlName="idCliente">
+        <mat-option *ngFor="let data of listCliente" [value]="data.id"
+          >{{ data.nombres }} {{ data.apellidos }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="fuse-mat-dense w-full">
+      <mat-label>Servicios:</mat-label>
+      <mat-select formControlName="idServicio">
+        <mat-option *ngFor="let data of listServicio" [value]="data.id">{{
+          data.descripcion
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="fecha">
+      <label for="fecha">Fecha:</label>
+      <input
+        matInput
+        type="date"
+        id="fecha"
+        name="fecha"
+        formControlName="fecha"
+      />
+    </div>
+
+    <div class="hora">
+      <label for="fecha">Hora:</label>
+      <input
+        matInput
+        type="time"
+        id="hora"
+        name="hora"
+        formControlName="hora"
+      />
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancelar</button>
+  <button mat-button (click)="onSave()">Guardar</button>
+</mat-dialog-actions>
