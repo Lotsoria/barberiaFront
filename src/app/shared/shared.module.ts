@@ -44,7 +44,7 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
     RegistrarComponent,
     AgendarComponent,
     GestionarClientesComponent,
-    // GestionarServiciosComponent,
+    GestionarServiciosComponent,
     SideBarComponent
   ]	
 })

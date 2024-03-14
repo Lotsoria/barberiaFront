@@ -25,6 +25,14 @@ export class GestionarService {
     ;
   }
 
+  updateCliente(soapRequest: string) {
+    const headers = { 'Content-Type': 'text/xml' };
+    return this.http.post('http://localhost:3000/clientes', soapRequest, {
+      headers,
+      responseType: 'text',
+    });
+  }
+
   deleteCliente(soapRequest: string) {
     const headers = { 'Content-Type': 'text/xml' };
     return this.http.post('http://localhost:3000/clientes', soapRequest, { headers, responseType: 'text' });

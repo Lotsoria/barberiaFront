@@ -43,8 +43,7 @@ export class UpdateServiciosModalComponent implements OnInit{
         precio: formData.precio,
 
       };
-      const soapRequest = this.createSoapRequest(servicioData);
-      console.log('soapRequest', soapRequest);
+      const soapRequest = this.updateSoapRequest(servicioData);
       if (this.updateServicio.invalid) {
         Swal.fire({
           icon: 'warning',
@@ -77,7 +76,7 @@ export class UpdateServiciosModalComponent implements OnInit{
 
 
 
-    createSoapRequest(data: any): string {
+    updateSoapRequest(data: any): string {
       // Convierte los datos del formulario a una solicitud SOAP XML
       const soapEnvelope = `     
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"

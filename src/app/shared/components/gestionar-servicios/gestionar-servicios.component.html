@@ -19,7 +19,7 @@
                 <td>{{data.estado}}</td>            
                 <td class="tdBtn">
                     <button class="editar" (click)="openModal(data.id)" >Editar</button>
-                    <button class="eliminar" >Eliminar</button>
+                    <button class="eliminar" (click)="deleteService(data.id)">Eliminar</button>
                 </td>
             </tr>
         </tbody>
